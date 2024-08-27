@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공부</title>
+    <link rel="stylesheet" href="css/study.scss">
+    <link rel="stylesheet" href="css/study.css">
+    <script src="../lib/jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(function () {
+            $('#header').load('../common/header.html');
+            $('#studyCss').load('study_css.html');
+
+            let studyMenu = $('.study_menu li');
+            let studyCont = $('.study');
+            studyMenu.click(function(){
+                studyMenu.removeClass('on');
+                $(this).addClass('on');
+                studyCont.removeClass('on');
+                studyCont.eq($(this).index()).addClass('on');
+            });
+
+            let num = $('.study__list span.num');
+
+            num.each(function(index, item){
+                let numAdd = index + 1;
+                $(item).text('0' + numAdd)
+            });
+
+            let studyList = $('.study__list li');
+            let studyInfo = $('.study__info--text');
+
+            studyList.click(function(){
+                studyList.removeClass('on');
+                $(this).addClass('on');
+                studyInfo.removeClass('on');
+                studyInfo.eq($(this).index()).addClass('on');
+
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+
+        <main id="study_main" class="inner">
+
+            <ul class="study_menu">
+                <li>html</li>
+                <li>css</li>
+                <li>javascript</li>
+                <li>example</li>
+            </ul><!-- .study_menu end -->
+
+            <!-- <h3>HTML</h3> -->
+             
+            <section class="study on" id="studyCss"></section><!-- #studyCss end -->
+
+
+            <section class="study" id="studyHtml">
+                <div class="study__list">
+                    <ol>
+                        <!-- <li><span class="num"></span><span>태그종류</span></li> -->
+                        <li><span class="num"></span><span>html이란</span></li>
+                        <li><span class="num"></span><span>인라인과 블럭태그</span></li>
+                        <li class="on"><span class="num"></span><span>시맨틱태그</span></li>
+                        <li><span class="num"></span><span>div</span></li>
+                        <li><span class="num"></span><span>a태그</span></li>
+                        <li><span class="num"></span><span>img태그</span></li>
+                        <li><span class="num"></span><span>ol li, ul li</span></li>
+                        <li><span class="num"></span><span>dl dt dd</span></li>
+
+                    </ol>
+                </div>
+                <div class="study__info">
+                    <div class="study__info--text html-info on">
+                        <h4>🔔 html이란 HTML(Hypertext Markup Language)</h4>
+
+                        <div class="theory">
+                            <p>html, 혹은 하이퍼텍스트 마크업 언어는 웹 페이지와 내용을 구조화기 위해 사용하는 코드로 콘텐츠의 구조를 정의하는 마크업 언어이다.</p>
+                            <p><strong>하이퍼텍스트(Hypertext)</strong> : 관련 항목을 연결하기 위해 구성된 텍스트</p>
+                            <p><strong>마크업(Markup)</strong> : 하드카피나 소프트카피로 출력될 모든 활자에 관한 스타일 가이드</p>
+                            <p><strong>언어(Language)</strong> : 컴퓨터 시스템이 명령어를 이해하고 해석할 때 사용하는 언어</p>
+                            <p>html은 특정 웹페이지의 마크업을 정의하므로 텍스트, 이미지 등 삽입하는 내용을 특정한 방식인 "태그"를 사용하여 표시할 수 있다. <br />
+                            제목, 단락, 굵은글씨단어, 이탤릭체 단어 등을 표현하는 태그들이 있다.</p>
+                            <p>html요소에서 대부분 시작하는 태그와 종료하는 태그로 이루어져 있지만 종종 단독으로 사용되는 태그들이 존재한다.</p>
+                             
+                            <p>html에는 기본 문법이 존재한다.</p>
+                            <ul class="type-02">
+                                <li><span>< !Doctype html ></span> :  html5를 사용하고 있음을 명시한다.</li>
+                                <li><span>< html >< /html ></span> : 모든 html문서의 최상위 요소이다. 모든 요소는 이 안에 존재되어야 한다.</li>
+                                <li><span>< head >< /head ></span> : 페이지 타이틀, 스타일스트, SEO용 메타 인포메이션 등 정보가 포함되어 있다.</li>
+                                <li><span>< meta / ></span> : 페이지의 메타 인포메이션을 전달받는 태그, 작성자, 사용중인 인코딩 유형, 응답형, 호환성 등이 포함될 수 있다.</li>
+                                <li><span>< title >< /title ></span> : 웹페이지의 타이틀을 나타내며 브라우저의 탭에 표시된다.</li>
+                                <li><span>< body >< /body ></span> : 브라우저에서 보여지는 내용은 body태그안에 존재한다.</li>
+                                
+                            </ul>
+
+                            <p>화면에 보여지는 결과는 같으나 전달하고자 하는 의미, 목적에 따라 다른 태그를 사용하게 된다.</p>
+                            <h5>💡마크업 언어인 태그를 써서 표현하는 이유는 무엇인가? </h5>
+                            <p>1. 웹 브라우저에게 명령하기 위해</p>
+                            <p>2. 문서 작성에 대한 협업과 유지 보수를 위해</p>
+                            <p>3. 정보를 수집하는 검색 엔젠에게 정확한 자료를 제공하기 위해</p>
+                            <em>출처 : https://brunch.co.kr/@coveryou/14</em>  
+                           
+
+                        </div>
+
+
+                        
+                    </div><!-- .study__info--text end -->
+
+                    <div class="study__info--text semantic-tag">
+                        <h4>🔔 시맨틱태그 :  콘텐츠의 의미와 구조를 설명해주는 태그</h4>
+                        <p>의미를 주는 태그, 태그 내용에 의미를 부여해줄 수 있으며, 프로그램에서 해당 콘텐츠를 쉽게 이해하고 검색엔진최적화 선넝을 향상 시켜줄 수 있음.</p>
+
+                        <h5>💡시맨틱 태그 종류</h5>
+                        <ul class="type" id="type_list">
+                            <li><a href="#title-tag">< h1 > ~ < h6 ></a></li>
+                            <li><a href="#header-tag">< header ></a></li>
+                            <li><a href="#nav-tag">< nav ></a></li>
+                            <li>< main ></li>
+                            <li>< footer ></li> 
+                            <li>< section ></li>
+                            <li>< article ></li>
+                            <li>< form ></li>
+                            <li>< figure ></li>
+                            <li>< figcaption ></li>
+                            <li>< aside ></li>
+                            <li>< mark ></li>
+                            <li>< details ></li>
+                            <li>< summary ></li>
+                            <li>< time ></li>
+                        </ul><!-- type end -->
+
+                        <div class="semantic">
+                            <ul class="type" id="title-tag">
+                                <li>< h1 > ~ < h6 ></li>
+                            </ul>
+                            <ul class="info">
+                                <li>타이틀태그, h1이 가장 큰 제목을 나타냄.</li>
+                                <li>h1태그는 웹사이트의 상단 로고 적용할 때 많이 사용 함.</li>
+                                <li>큰 제목의 순서대로 타이틀 태그 사용. 중복사용 가능함.</li>
+                            </ul>
+
+                            <ul class="type" id="header-tag">
+                                <li>< header ></li>
+                            </ul>
+
+                            <ul class="info">
+                                <li>대표적으로 웹사이트 로고와 메뉴를 감싸고 있는 영역을 표현할 때 사용.</li>
+                                <li>제목, 로고, 검색폼, 작성자 이름 등을 포함할 수 있음.</li>
+                                <li>홈페이지의 제목을 나타내거나 글 제목을 나타낼 때 사용할 수 있음.</li>
+                                <li class="bullet-none">
+                                    <pre><code>
+        <mark>< !-- 페이지 제목 -- ></mark>
+        < header >
+            < h1 >Main Page Title< /h1 >
+        < /header >
+
+        <mark>< !-- 본문, 글 제목 -- ></mark>
+        < article >
+            < header >
+                < h2 >The Planet Earth< /h2 >
+                < p >Posted on Wednesday, 4 October 2024 by Jane Smith< /p >
+            < /header >
+            < p >We live on a planet that's blue and green, with so many things still unseen.< /p >
+        < /article >  
+                                    </code></pre>
+                                </li>
+                            </ul><!-- .info end -->
+
+                            <ul class="type" id="nav-tag">
+                                <li>< nav ></li>
+                            </ul>
+
+                            <ul class="info">
+                                <li>현재 또는 다른페이지와 연결되는 내비게이션 링크들을 표현할 때 사용</li>
+                                <li>일반적으로 메뉴, 목차, 인텍스 등이 있음.</li>
+                            </ul>
+
+                            <ul class="type" id="main-tag">
+                                <li>< main ></li>
+                            </ul>
+
+                            <ul class="info">
+                                <li>문서의 주요 콘텐츠를 나타낼 때 사용.</li>
+                                <li>main태그는 문서에서 단 하나만 존재해야 함.</li>
+                                <li>main태그는 article, asize, footer, header, nav의 자손이 될 수 없음.</li>
+                            </ul>
+
+                            <ul class="type" id="footer-tag">
+                                <li>< footer ></li>
+                            </ul>
+
+                            <ul class="info">
+                                <li>보통 웹사이트 하단에 표기되며 저작권, 연락처, 사이트맵, top버튼, 연관페이지 등을 포함할 때 사용</li>
+                                <li>footer태그는 여러개 사용할 수 있음.</li>
+                            </ul>
+
+                            <ul class="type" id="section-tag">
+                                <li>< section ></li>
+                            </ul>
+
+                            <ul class="info">
+                                <li>html문서에서 독립된 영역을 나타낼 때 사용.</li>
+                                <li>section태그는 제목 요소인 타이틀태그(h1 ~ h6)를 자식 요소로 포함하고 있음.</li>
+                            </ul>
+
+                            <ul class="type" id="article-tag">
+                                <li>< article ></li>
+                            </ul>
+
+                            <ul class="info">
+                                <li>페이지 또는 사이트와는 완전히 독립적으로 구성할 때 사용.</li>
+                                <li>블로그 포스트, 보도기사, 게시판, 매거진 등 표현할 때 사용.</li>
+                                <li>하나의 문서안에 여러개의 article이 존재할 수 있음.</li>
+                                <li>article안에 section이 오거나 section안에 article이 올 수 있음.</li>
+                            </ul>
+
+                            <ul class="type" id="form-tag">
+                                <li>< form ></li>
+                            </ul>
+
+                            <ul class="info">
+                                <li>사용자로부터 정보를 입력받거나 제출하기 위해 사용.</li>
+                                <li>검색창, 로그인, 회원가입 페이지 제작할 경우 form태그 활용할 수 있음.</li>
+                                <li>form태그 안에는 < button >, < input >, < label >, < option >, < select >등 해당 태그들을 하나이상 포함할 수 있음.</li>
+                            </ul>
+
+                            <ul class="type" id="figure-tag">
+                                <li>< figure ></li>
+                            </ul>
+
+                            <ul class="info">
+                                <li>독립적인 콘텐츠를 표현함. 문서의 내용과 연관성은 있으나, 흐름은 독립적이므로 내용을 삭제해도 문서 흐름에 영향을 주지 않도록 표현할 수 있음.</li>
+                                <li>삽화나 다이어그램, 사진, 동영상 등과 같은 내용을 포함할 때 사용.</li>
+                                <li>figcaption태그를 사용하여 설명을 추가할 수 있음.</li>
+                                <li>figure태그는 독립적인 이미지, 동영상을 포함할 때 주로 사용됨.</li>
+                            </ul>
+
+                            <ul class="type" id="figcaption-tag">
+                                <li>< figcaption  ></li>
+                            </ul>
+
+                            <ul class="info">
+                                <li>부모인 figure태그가 포함하는 다른 콘텐츠에 대한 설명을 나타낼 때 사용</li>
+                            </ul>
+
+                        </div> <!-- .semantic end -->
+
+                    </div><!-- study__info--tex  시맨틱태그-->
+
+
+                    <div class="study__info--text a-tag">
+                        <h4>🔔 a태그 : 링크 연결 태그</h4>
+                        <mark>inline태그</mark>
+
+                        <ul class="info">
+                            <li>링크 연결 태그, 태그 사용 시 기본적으로 <i>밑줄, 컬러 색상이 적용되어 있음.</i></li>
+                            <li>a태그에 사용할 수 있는 속성들이 존재함.</li>    
+                            <li>
+                                href=”연결주소 지정, 없을 경우 #으로 대체함” ⇒ #으로 대체하여 작성할 경우 상위로 클릭 시 상위로 올라가는 특성이 있어 onclick=”return
+                                false”를 함께 작성하여 링크 방지해주어야 함.
+                            </li>
+            
+                                     <li><mark>taget=”_blank”</mark> ⇒링크를 클릭 시 창을 어떻게 열지 설정, `_blank 새 탭에서 열기`, `_self 현재 탭에서 열기(기본값)`</li>
+            
+                                    <li><mark>title=”도움말 설명”</mark> ⇒ 해당 링크에 마우스 커서를 올렸을 때 도움말을 설정할 수 있음.</li>
+                                
+                            
+                                </ul>
+                                <caption>https://electronic-moongchi.tistory.com/87</caption>
+                        
+
+        <pre><aside>
+            💡 **링크의 상태**
+            :**link** ⇒ 아직 한 번도 방문한 적이 없는 상태(기본값)
+            :**visited** ⇒ 한 번이라도 방문한 적이 있는 상태
+            :**hover** ⇒ 링크 위에 마우스를 올려놓은 상태
+            :**active** ⇒ 링크를 마우스로 누르고 있는 상태
+        </aside></pre>
+
+                         
+        <pre><code>
+            a {
+                text-decoration:none; /*밑줄 없애기*/
+                color: inherit; /*부모에게 상속받기*/
+            }
+            a:link {}
+            a:visited {}
+            a:hover {}
+            a:active {}
+        </code></pre>
+        <pre><code>
+            < a href="#" target="_blank" > a태그, 링크걸기 < /a >
+            < a href="#" download="저장파일이름" > 파일 다운받기 < /a >
+            < a href="tel:010-1234-5678" > 전화번호 연결, 모바일에서 전화연결가능< /a >
+            < a href="mailto:test.daum.net" > 메일보내기 < /a >
+            < a href="javascript:alert('알림');" > 알림 < /a >
+        </code></pre>
+                     
+
+        <pre><code>
+            < !--내부 페이지 이동-- >
+            < a href="#cont01" > id명 cont01로 위치이동 < /a >
+            < a href="#cont02" > id명 cont02로 위치이동 < /a >
+
+            < div id="cont01" > 첫번째 콘텐츠 입니다. < /div > < !--#cont01-- >
+            < div id="cont02" > 첫번째 콘텐츠 입니다. < /div > < !--#cont02-- >
+        </code></pre>
+                        
+                    </div> <!-- a태그 내용 -->
+
+
+                </div><!-- .study__info end -->
+            </section><!-- .study end -->
+
+           
+        </main><!-- #study_main end -->
+    </div><!-- #wrap end -->
+
+   
+</body>
+
+</html>

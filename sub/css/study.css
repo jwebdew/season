@@ -1,0 +1,246 @@
+@import url("../../css/reset.css");
+@import url("../../css/common.css");
+@import url("../../css/common.scss");
+#header {
+  color: #333;
+}
+
+body {
+  color: #333;
+  font-family: "NanumBarunGothic";
+  font-weight: 400;
+}
+
+em {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.bullet-none::before {
+  display: none;
+}
+
+.inner {
+  max-width: 1600px;
+  width: calc(100% - 30px);
+  margin: 0 auto;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+h5 {
+  font-weight: bold;
+  margin-top: 4rem;
+  font-size: 2.2rem;
+}
+
+b {
+  font-weight: 700;
+}
+
+mark {
+  padding: 0 5px;
+}
+
+ul.info li {
+  position: relative;
+  padding-left: 15px;
+  line-height: 1.8;
+}
+ul.info li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: #555;
+  border-radius: 50%;
+  position: absolute;
+  top: 16px;
+  left: 0;
+}
+ul.info li i {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+ul.type {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+ul.type li {
+  background-color: #f1f1ef;
+  padding: 0 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+ul.type-02 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+ul.type-02 li span {
+  padding: 0 10px;
+  background-color: #f1f1ef;
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.study_menu {
+  margin-top: 100px;
+  display: flex;
+  gap: 20px;
+}
+
+/* study_css.html */
+.css__menu {
+  display: flex;
+  gap: 20px;
+}
+.css__menu h5 {
+  font-family: "Diphylleia-Regular";
+  color: #999;
+}
+.css__menu h5.on {
+  color: #333;
+}
+.css__info > li {
+  display: flex;
+  border: 1px solid #999;
+  margin: 15px 0;
+  position: relative;
+}
+.css__info > li::before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 300px;
+  background-color: #999;
+}
+.css__info > li strong {
+  display: inline-block;
+  width: 300px;
+  padding: 10px;
+  background-color: #f1f1ef;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+.css__info > li div.ex {
+  width: calc(100% - 650px);
+  line-height: 1.5;
+  padding: 20px;
+}
+.css__info > li div.ex span {
+  background-color: #f1f1ef;
+}
+.css__info > li div.example {
+  width: 320px;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid #999;
+  padding: 10px;
+  font-size: 16px;
+  font-family: "Consola Mono", sans-serif;
+  line-height: 1.3;
+}
+.css__info > li ul.type {
+  display: inline-block;
+}
+.css__info > li ul.type li {
+  display: inline-block;
+}
+
+/* .css end */
+.study {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+  display: none;
+  /* .study__list */
+  /* study__info  */
+}
+.study.on {
+  display: flex;
+}
+.study__list {
+  width: 500px;
+}
+.study__list ol {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.study__list ol li {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 20px;
+  border-bottom: 1px solid #999;
+  font-family: "Diphylleia-Regular";
+  font-size: 25px;
+  text-align: center;
+  color: #000;
+}
+.study__list ol li span.num {
+  font-size: 18px;
+}
+.study__list ol li.on {
+  background-color: #00e7ff;
+}
+.study__info::-webkit-scrollbar {
+  display: none;
+}
+.study__info {
+  width: calc(100% - 650px);
+  height: calc(100vh - 200px);
+  overflow: auto;
+  position: sticky;
+  right: 0;
+  top: 0;
+  padding-bottom: 10rem;
+  line-height: 2;
+  font-size: 20px;
+}
+.study__info--text {
+  display: none;
+}
+.study__info--text.on {
+  display: block;
+}
+.study__info ul#type_list {
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.17);
+  padding-bottom: 20px;
+}
+.study__info pre {
+  background-color: #f1f1ef;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 10px 0;
+}
+.study__info .semantic {
+  margin-top: 4rem;
+}
+.study__info .semantic .type {
+  padding-top: 5rem;
+}
+.study__info .theory strong {
+  display: inline-block;
+  font-weight: bold;
+}
+
+/* study end *//*# sourceMappingURL=study.css.map */
